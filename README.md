@@ -9,19 +9,19 @@ Plexorin'e https://plexorin.com/tr/ adresinden kayıt olabilirsiniz. API anahtar
 ![plexorin-wordpress-plugin-meta-box](https://github.com/user-attachments/assets/845f4578-e97e-4d57-a330-c219b51484e1)
 
 # Eklenti Önerilen Ayarları
-PHP 8.4
+PHP 8.4<br>
 WordPress 6.6
 
 # Eklenti Gereksinimleri
-PHP 7.0+
+PHP 7.0+<br>
 WordPress 6.0+
 
 # Kurulum
-1 - Eklenti dosyalarını zip olarak indirin.
-2 - Web sitenizde /wp-content/plugins/ dizinine yükleyip zip dosyasını dışarı aktarın.
-3 - Admin panelinizden eklentiyi aktifleştirin.
-4 - Menüdeki 'Plexorin' butonuna tıklayarak eklenti ayarlarına gidin ve API anahtarınızı ekleyin.
-5 - Genel paylaşım yapısı üzerinde bir değişiklik yapmak isterseniz eklenti ayarları sayfasından güncelleyerek yan tarafta bulunan önizleme alanından örnek içeriği görüntüleyebilirsiniz.
+1 - Eklenti dosyalarını zip olarak indirin.<br>
+2 - Web sitenizde /wp-content/plugins/ dizinine yükleyip zip dosyasını dışarı aktarın.<br>
+3 - Admin panelinizden eklentiyi aktifleştirin.<br>
+4 - Menüdeki 'Plexorin' butonuna tıklayarak eklenti ayarlarına gidin ve API anahtarınızı ekleyin.<br>
+5 - Genel paylaşım yapısı üzerinde bir değişiklik yapmak isterseniz eklenti ayarları sayfasından güncelleyerek yan tarafta bulunan önizleme alanından örnek içeriği görüntüleyebilirsiniz.<br>
 
 # Destek
 Herhangi bir sorun yaşamanız durumunda bizimle contact@plexorin.com ya da +90 539 524 4156 numarası üzerinden iletişime geçebilirsiniz. 

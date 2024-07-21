@@ -21,7 +21,7 @@ WordPress 6.0+
 2 - Web sitenizde /wp-content/plugins/ dizinine yükleyip zip dosyasını dışarı aktarın.<br>
 3 - Admin panelinizden eklentiyi aktifleştirin.<br>
 4 - Menüdeki 'Plexorin' butonuna tıklayarak eklenti ayarlarına gidin ve API anahtarınızı ekleyin.<br>
-5 - Genel paylaşım yapısı üzerinde bir değişiklik yapmak isterseniz eklenti ayarları sayfasından güncelleyerek yan tarafta bulunan önizleme alanından örnek içeriği görüntüleyebilirsiniz.<br>
+5 - Genel paylaşım yapısı üzerinde bir değişiklik yapmak isterseniz eklenti ayarları sayfasından güncelleyerek yan tarafta bulunan ön izleme alanından örnek içeriği görüntüleyebilirsiniz.<br>
 
 # Destek
 Herhangi bir sorun yaşamanız durumunda bizimle contact@plexorin.com ya da +90 539 524 4156 numarası üzerinden iletişime geçebilirsiniz. 

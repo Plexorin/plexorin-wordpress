@@ -17,7 +17,7 @@ function plexorin_add_meta_box() {
 add_action('add_meta_boxes', 'plexorin_add_meta_box');
 
 function plexorin_meta_box_callback($post) {
-    wp_nonce_field('plexorin_meta_box', 'plexorin_meta_box_nonce');
+    wp_nonce_field('plexorin_meta_box', 'prefix_nonce');
 
     $cancel_share = get_post_meta($post->ID, '_plexorin_cancel_share', true);
     $custom_title = get_post_meta($post->ID, '_plexorin_custom_title', true);
@@ -28,19 +28,19 @@ function plexorin_meta_box_callback($post) {
     <p>
         <label for="plexorin_cancel_share">
             <input type="checkbox" name="plexorin_cancel_share" id="plexorin_cancel_share" value="1" <?php checked($cancel_share, '1'); ?> />
-            <?php esc_html_e('Bu gönderi paylaşılmasın', 'plexorin'); ?>
+            <?php esc_html_e('Cancel Share', 'plexorin'); ?>
         </label>
     </p>
     <p>
-        <label for="plexorin_custom_title"><?php esc_html_e('Gönderiye Özel Başlık', 'plexorin'); ?></label>
+        <label for="plexorin_custom_title"><?php esc_html_e('Custom Title', 'plexorin'); ?></label>
         <input type="text" name="plexorin_custom_title" id="plexorin_custom_title" value="<?php echo esc_attr($custom_title); ?>" class="widefat" />
     </p>
     <p>
-        <label for="plexorin_custom_description"><?php esc_html_e('Gönderiye Özel Açıklama', 'plexorin'); ?></label>
+        <label for="plexorin_custom_description"><?php esc_html_e('Custom Description', 'plexorin'); ?></label>
         <textarea name="plexorin_custom_description" id="plexorin_custom_description" class="widefat"><?php echo esc_textarea($custom_description); ?></textarea>
     </p>
     <p>
-        <label for="plexorin_custom_image"><?php esc_html_e('Gönderiye Özel Öne Çıkan Resim', 'plexorin'); ?></label>
+        <label for="plexorin_custom_image"><?php esc_html_e('Custom Image URL', 'plexorin'); ?></label>
         <input type="text" name="plexorin_custom_image" id="plexorin_custom_image" value="<?php echo esc_url($custom_image); ?>" class="widefat" />
     </p>
     <?php
@@ -48,12 +48,12 @@ function plexorin_meta_box_callback($post) {
 
 function plexorin_save_postdata($post_id) {
     // Check if our nonce is set.
-    if (!isset($_POST['plexorin_meta_box_nonce'])) {
+    if (!isset($_POST['prefix_nonce'])) {
         return;
     }
 
     // Verify that the nonce is valid.
-    if (!wp_verify_nonce($_POST['plexorin_meta_box_nonce'], 'plexorin_meta_box')) {
+    if ( ! isset( $_POST['prefix_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash ( $_POST['prefix_nonce'] ) ) , 'prefix_nonce' ) ){
         return;
     }
 

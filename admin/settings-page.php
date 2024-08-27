@@ -17,6 +17,20 @@ function plexorin_admin_menu() {
 }
 add_action('admin_menu', 'plexorin_admin_menu');
 
+add_action('admin_enqueue_scripts', 'plugin_name_enqueue_admin_scripts');
+function plugin_name_enqueue_admin_scripts($hook) {
+    // Sadece eklentiye özgü ayar sayfasında yüklenmesini sağlamak
+    if ($hook != 'toplevel_page_plexorin-settings') {
+        return;
+    }
+    
+    // JS dosyasını ekleyin
+    wp_enqueue_script('plugin-custom-js', plugin_dir_url(__FILE__) . '../js/main.js', array('jquery'), '1.0', true);
+
+    // CSS dosyasını ekleyin
+    wp_enqueue_style('plugin-custom-css', plugin_dir_url(__FILE__) . '../css/style.css', array(), '1.0');
+}
+
 function plexorin_settings_page() {
     if (!current_user_can('manage_options')) {
         return;
@@ -24,43 +38,6 @@ function plexorin_settings_page() {
 
     ?>
     <div class="wrap">
-        <style>
-            .settings-container {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-            }
-            .settings-form {
-                flex: 1 1 70%;
-                margin-right: 20px;
-            }
-            .preview-section {
-                display: flex;
-                flex: 1 1 30%;
-                flex-direction: column;
-            }
-            .preview {
-                border: 1px solid #ccc;
-                padding: 10px;
-                margin-bottom: 10px;
-            }
-            .plexorin-settings input[type="text"], .plexorin-settings textarea {
-                width: 100%;
-                max-width: 600px;
-            }
-            .plexorin-settings label {
-                display: block;
-                margin-bottom: 5px;
-                font-weight: bold;
-            }
-            .plexorin-settings p {
-                margin-bottom: 10px;
-            }
-            .disabled {
-                pointer-events: none;
-                opacity: 0.5;
-            }
-        </style>
         <h1>Plexorin Sosyal Medya Otomatik Paylaşım Aracı Ayarları</h1>
         <div class="settings-container">
             <div class="settings-form">
@@ -74,17 +51,6 @@ function plexorin_settings_page() {
             </div>
             <div class="preview-section">
                 <div class="preview">
-                    <h2>Instagram Önizleme</h2>
-                    <hr>
-                    <div id="instagram-preview-content">
-                        <p class="content-title">(Haber Başlığı) Plexorin ile İçerikleriniz Sosyal Medyada Otomatik Olarak Paylaşılsın!</p>
-                        <p class="content-description">(Haber Açıklaması) Sosyal medya hesaplarınızı Plexorin'e üye olarak bağlayın ardından sizin için oluşturulan API anahtarını eklenti ayarlarından ekleyin. Plexorin hesabınızda seçeceğiniz hesaplarda paylaşımlar otomatik olarak yapılacaktır.</p>
-                        <p class="content-link">(Haber Linki) https://plexorin.com/tr/</p>
-                        <p class="content-hashtag">(Hashtagler) #plexorin #sosyalmedyapaylasimi #sosyalmedya</p>
-                        <img class="content-url" src="https://plexorin.com/assets/img/default.webp" style="width: 100%">
-                    </div>
-                </div>
-                <div class="preview">
                     <h2>Twitter Önizleme</h2>
                     <p style="font-size:12px; color: red">Twitter için 300 karakter sınırı vardır, içeriklerin sadece ilk 300 karakteri paylaşılacaktır!</p>
                     <hr>
@@ -92,7 +58,7 @@ function plexorin_settings_page() {
                         <p class="content-title">(Haber Başlığı) Plexorin ile İçerikleriniz Sosyal Medyada Otomatik Olarak Paylaşılsın!</p>
                         <p class="content-link">(Haber Linki) https://plexorin.com/tr/</p>
                         <p class="content-hashtag">(Hashtagler) #plexorin #sosyalmedyapaylasimi #sosyalmedya</p>
-                        <img class="content-url" src="https://plexorin.com/assets/img/default.webp" style="width: 100%">
+                        <img class="content-url" src="https://plexorin.com/assets/imgs/default.webp" style="width: 100%">
                     </div>
                 </div>
                 <div class="preview">
@@ -103,75 +69,23 @@ function plexorin_settings_page() {
                         <p class="content-description">(Haber Açıklaması) Sosyal medya hesaplarınızı Plexorin'e üye olarak bağlayın ardından sizin için oluşturulan API anahtarını eklenti ayarlarından ekleyin. Plexorin hesabınızda seçeceğiniz hesaplarda paylaşımlar otomatik olarak yapılacaktır.</p>
                         <p class="content-link">(Haber Linki) https://plexorin.com/tr/</p>
                         <p class="content-hashtag">(Hashtagler)#plexorin #sosyalmedyapaylasimi #sosyalmedya</p>
+                        <img class="content-url" src="https://plexorin.com/assets/imgs/default.webp" style="width: 100%">
+                    </div>
+                </div>
+                <div class="preview">
+                    <h2>Instagram Önizleme</h2>
+                    <hr>
+                    <div id="instagram-preview-content">
+                        <p class="content-title">(Haber Başlığı) Plexorin ile İçerikleriniz Sosyal Medyada Otomatik Olarak Paylaşılsın!</p>
+                        <p class="content-description">(Haber Açıklaması) Sosyal medya hesaplarınızı Plexorin'e üye olarak bağlayın ardından sizin için oluşturulan API anahtarını eklenti ayarlarından ekleyin. Plexorin hesabınızda seçeceğiniz hesaplarda paylaşımlar otomatik olarak yapılacaktır.</p>
+                        <p class="content-link">(Haber Linki) https://plexorin.com/tr/</p>
+                        <p class="content-hashtag">(Hashtagler) #plexorin #sosyalmedyapaylasimi #sosyalmedya</p>
                         <img class="content-url" src="https://plexorin.com/assets/img/default.webp" style="width: 100%">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var updatePreview = function() {
-                var title = document.getElementById('title-input').value;
-                var description = document.getElementById('description-textarea').value;
-                var hashtag = document.getElementById('hashtag-input').value;
-
-                title = title.replace('{post_title}', '[Haber Başlığı]');
-                document.querySelectorAll('.content-title').forEach(function(p) {
-                    p.textContent = title;
-                });
-
-                description = description.replace('{post_title}', '[Haber Başlığı]');
-                description = description.replace('{post_description}', '[Haber Açıklaması]');
-                description = description.replace('{post_link}', '[Haber Linki]');
-                description = description.replace('{hashtags}', '[Hashtagler]');
-                description = description.replace(/\n/g, '<br>');
-                document.querySelectorAll('.content-description').forEach(function(p) {
-                    p.innerHTML = description;
-                });
-
-                document.querySelectorAll('.content-hashtag').forEach(function(p) {
-                    p.textContent = hashtag;
-                });
-            };
-
-            document.getElementById('title-input').addEventListener('input', updatePreview);
-            document.getElementById('description-textarea').addEventListener('input', updatePreview);
-            document.getElementById('hashtag-input').addEventListener('input', updatePreview);
-        });
-        </script>
-    <script>
-    jQuery(document).ready(function($) {
-        function checkApiKey() {
-            var apiKey = $('#plexorin_api_key').val();
-            if (!apiKey) {
-                $('.api-dependent').addClass('disabled');
-                return;
-            }
-            $.ajax({
-                url: 'https://plexorin.com/hub/operations/api-verify-key',
-                type: 'POST',
-                dataType: 'json',
-                contentType: 'application/json; charset=utf-8',
-                data: JSON.stringify({ api_key: apiKey }),
-                success: function(response) {
-                    if (response.valid) {
-                        $('.api-dependent').removeClass('disabled');
-                    } else {
-                        $('.api-dependent').addClass('disabled');
-                    }
-                },
-                error: function() {
-                    $('.api-dependent').addClass('disabled');
-                }
-            });
-        }
-
-        $('#plexorin_api_key').on('change', checkApiKey);
-        checkApiKey();
-    });
-
-    </script>
     <?php
 }
 
@@ -269,7 +183,7 @@ function plexorin_default_hashtags_callback() {
 function plexorin_default_image_callback() {
     $options = get_option('plexorin_settings');
     $image_id = $options['default_image'];
-    $image_url = $image_id ? wp_get_attachment_url($image_id) : 'https://plexorin.com/assets/img/default.webp';
+    $image_url = $image_id ? wp_get_attachment_url($image_id) : 'https://plexorin.com/assets/imgs/default.webp';
     ?>
     <div class="api-dependent">
         <p><?php esc_html_e('Bir gönderinin öne çıkan görseli yoksa kullanılacak varsayılan öne çıkan görselin linkini girin veya medya kitaplığından bir görsel seçin.', 'plexorin'); ?></p>
@@ -279,61 +193,9 @@ function plexorin_default_image_callback() {
         <button type="button" class="button" id="plexorin_default_image_button"><?php esc_html_e('Resim Seç', 'plexorin'); ?></button>
         <button type="button" class="button" id="plexorin_default_image_remove" style="display: <?php echo $image_url ? 'inline-block' : 'none'; ?>;"><?php esc_html_e('Resmi Sil', 'plexorin'); ?></button>
     </div>
-    <script type="text/javascript">
-        var defaultImageUrl = "<?php echo esc_url($image_url); ?>";
-        document.addEventListener('DOMContentLoaded', function() {
-            var images = document.querySelectorAll('.content-url');
-            images.forEach(function(img) {
-                img.src = defaultImageUrl;
-            });
-
-            var frame;
-            document.getElementById('plexorin_default_image_button').addEventListener('click', function(e) {
-                e.preventDefault();
-                if (frame) {
-                    frame.open();
-                    return;
-                }
-                frame = wp.media({
-                    title: 'Select or Upload Media',
-                    button: {
-                        text: 'Use this media'
-                    },
-                    multiple: false
-                });
-
-                frame.on('select', function() {
-                    var attachment = frame.state().get('selection').first().toJSON();
-                    document.getElementById('plexorin_default_image').value = attachment.id;
-                    var imageUrl = attachment.url;
-                    document.getElementById('plexorin_default_image_preview').src = imageUrl;
-                    document.getElementById('plexorin_default_image_preview').style.display = 'block';
-                    document.getElementById('plexorin_default_image_remove').style.display = 'inline-block';
-
-                    // Update the preview images
-                    images.forEach(function(img) {
-                        img.src = imageUrl;
-                    });
-                });
-
-                frame.open();
-            });
-
-            document.getElementById('plexorin_default_image_remove').addEventListener('click', function(e) {
-                e.preventDefault();
-                document.getElementById('plexorin_default_image').value = '';
-                document.getElementById('plexorin_default_image_preview').style.display = 'none';
-                this.style.display = 'none';
-
-                // Reset the preview images to default
-                images.forEach(function(img) {
-                    img.src = defaultImageUrl;
-                });
-            });
-        });
-    </script>
     <?php
 }
+
 
 function plexorin_sanitize_settings($settings) {
     $settings['api_key'] = sanitize_text_field($settings['api_key']);

@@ -28,19 +28,19 @@ function plexorin_meta_box_callback($post) {
     <p>
         <label for="plexorin_cancel_share">
             <input type="checkbox" name="plexorin_cancel_share" id="plexorin_cancel_share" value="1" <?php checked($cancel_share, '1'); ?> />
-            <?php esc_html_e('Cancel Share', 'plexorin'); ?>
+            <?php esc_html_e('Bu gönderi paylaşılmasın', 'plexorin'); ?>
         </label>
     </p>
     <p>
-        <label for="plexorin_custom_title"><?php esc_html_e('Custom Title', 'plexorin'); ?></label>
+        <label for="plexorin_custom_title"><?php esc_html_e('Özel Başlık', 'plexorin'); ?></label>
         <input type="text" name="plexorin_custom_title" id="plexorin_custom_title" value="<?php echo esc_attr($custom_title); ?>" class="widefat" />
     </p>
     <p>
-        <label for="plexorin_custom_description"><?php esc_html_e('Custom Description', 'plexorin'); ?></label>
+        <label for="plexorin_custom_description"><?php esc_html_e('Özel Açıklama', 'plexorin'); ?></label>
         <textarea name="plexorin_custom_description" id="plexorin_custom_description" class="widefat"><?php echo esc_textarea($custom_description); ?></textarea>
     </p>
     <p>
-        <label for="plexorin_custom_image"><?php esc_html_e('Custom Image URL', 'plexorin'); ?></label>
+        <label for="plexorin_custom_image"><?php esc_html_e('Özel Öne Çıkan Resim', 'plexorin'); ?></label>
         <input type="text" name="plexorin_custom_image" id="plexorin_custom_image" value="<?php echo esc_url($custom_image); ?>" class="widefat" />
     </p>
     <?php

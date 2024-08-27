@@ -1,0 +1,36 @@
+/* plexorin_settings_page CSS */
+.settings-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.settings-form {
+    flex: 1 1 70%;
+    margin-right: 20px;
+}
+.preview-section {
+    display: flex;
+    flex: 1 1 30%;
+    flex-direction: column;
+}
+.preview {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.plexorin-settings input[type="text"], .plexorin-settings textarea {
+    width: 100%;
+    max-width: 600px;
+}
+.plexorin-settings label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.plexorin-settings p {
+    margin-bottom: 10px;
+}
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}

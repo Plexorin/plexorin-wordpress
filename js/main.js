@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 jQuery(document).ready(function($) {
     function checkApiKey() {
-        var apiKey = $('#plexorin_api_key').val();
+        var apiKey = $('#bts_plexorin_api_key').val();
         if (!apiKey) {
             $('.api-dependent').addClass('disabled');
             return;
@@ -54,12 +54,12 @@ jQuery(document).ready(function($) {
         });
     }
 
-    $('#plexorin_api_key').on('change', checkApiKey);
+    $('#bts_plexorin_api_key').on('change', checkApiKey);
     checkApiKey();
 });
 
 
-var defaultImageUrl = document.getElementById('plexorin_default_image_preview').src;
+var defaultImageUrl = document.getElementById('bts_plexorin_default_image_preview').src;
 document.addEventListener('DOMContentLoaded', function() {
     var images = document.querySelectorAll('.content-url');
     images.forEach(function(img) {
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     var frame;
-    document.getElementById('plexorin_default_image_button').addEventListener('click', function(e) {
+    document.getElementById('bts_plexorin_default_image_button').addEventListener('click', function(e) {
         e.preventDefault();
         if (frame) {
             frame.open();
@@ -83,11 +83,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         frame.on('select', function() {
             var attachment = frame.state().get('selection').first().toJSON();
-            document.getElementById('plexorin_default_image').value = attachment.id;
+            document.getElementById('bts_plexorin_default_image').value = attachment.id;
             var imageUrl = attachment.url;
-            document.getElementById('plexorin_default_image_preview').src = imageUrl;
-            document.getElementById('plexorin_default_image_preview').style.display = 'block';
-            document.getElementById('plexorin_default_image_remove').style.display = 'inline-block';
+            document.getElementById('bts_plexorin_default_image_preview').src = imageUrl;
+            document.getElementById('bts_plexorin_default_image_preview').style.display = 'block';
+            document.getElementById('bts_plexorin_default_image_remove').style.display = 'inline-block';
 
             // Update the preview images
             images.forEach(function(img) {
@@ -98,10 +98,10 @@ document.addEventListener('DOMContentLoaded', function() {
         frame.open();
     });
 
-    document.getElementById('plexorin_default_image_remove').addEventListener('click', function(e) {
+    document.getElementById('bts_plexorin_default_image_remove').addEventListener('click', function(e) {
         e.preventDefault();
-        document.getElementById('plexorin_default_image').value = '';
-        document.getElementById('plexorin_default_image_preview').style.display = 'none';
+        document.getElementById('bts_plexorin_default_image').value = '';
+        document.getElementById('bts_plexorin_default_image_preview').style.display = 'none';
         this.style.display = 'none';
 
         // Reset the preview images to default

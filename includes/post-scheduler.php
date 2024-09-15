@@ -4,12 +4,12 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
-function plexorin_send_post_to_plexorin($post_ID, $post, $update) {
+function bts_plexorin_send_post_to_plexorin($post_ID, $post, $update) {
     if ($post->post_status != 'publish') {
         return;
     }
 
-    $options = get_option('plexorin_settings');
+    $options = get_option('bts_plexorin_settings');
 
     // Check user and category
     if (!in_array($post->post_author, $options['users'])) {
@@ -21,19 +21,19 @@ function plexorin_send_post_to_plexorin($post_ID, $post, $update) {
     }
 
     // Check if share is canceled
-    $cancel_share = get_post_meta($post_ID, '_plexorin_cancel_share', true);
+    $cancel_share = get_post_meta($post_ID, '_bts_plexorin_cancel_share', true);
     if ($cancel_share == '1') {
         return;
     }
 
     // Get custom title from the post meta
-    $custom_title = get_post_meta($post_ID, '_plexorin_custom_title', true);
+    $custom_title = get_post_meta($post_ID, '_bts_plexorin_custom_title', true);
 
     // Get custom description from the post meta
-    $custom_description = get_post_meta($post_ID, '_plexorin_custom_description', true);
+    $custom_description = get_post_meta($post_ID, '_bts_plexorin_custom_description', true);
 
     // Get custom image from the post meta
-    $custom_image = get_post_meta($post_ID, '_plexorin_custom_image', true);
+    $custom_image = get_post_meta($post_ID, '_bts_plexorin_custom_image', true);
 
     // Fetch SEO description from Yoast or fallback to the post excerpt/content
     $seo_description = get_post_meta($post_ID, '_yoast_wpseo_metadesc', true);
@@ -105,4 +105,4 @@ function plexorin_send_post_to_plexorin($post_ID, $post, $update) {
         error_log("Plexorin API request data: " . print_r($data, true));
     }
 }
-add_action('save_post', 'plexorin_send_post_to_plexorin', 10, 3);
+add_action('save_post', 'bts_plexorin_send_post_to_plexorin', 10, 3);

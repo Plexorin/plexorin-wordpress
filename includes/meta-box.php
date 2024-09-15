@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) {
 function bts_plexorin_add_meta_box() {
     add_meta_box(
         'bts_plexorin_meta_box',
-         __('Plexorin Post Settings', 'plexorin'),
+         __('Plexorin Post Settings', 'bts_plexorin'),
         'bts_plexorin_meta_box_callback',
         'post',
         'side',

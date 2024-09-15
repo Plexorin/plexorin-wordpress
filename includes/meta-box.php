@@ -14,7 +14,7 @@ function bts_plexorin_add_meta_box() {
         'high'
     );
 }
-add_action('add_meta_boxes', 'plexorin_add_meta_box');
+add_action('add_meta_boxes', 'bts_plexorin_add_meta_box');
 
 function bts_plexorin_meta_box_callback($post) {
     wp_nonce_field('bts_plexorin_meta_box', 'prefix_nonce');

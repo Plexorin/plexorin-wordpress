@@ -2,7 +2,7 @@
 /*
 Plugin Name: Blog Yazılarını Sosyal Medyada Otomatik Paylaşın - Plexorin
 Description: WordPress blog içerikleriniz otomatik olarak anında sosyal medya hesaplarınızda paylaşılsın! WordPress to Social.
-Version: 1.0.2
+Version: 1.0.3
 Author: Plexorin
 Author URI: https://plexorin.com/tr/
 License: GPLv2 or later

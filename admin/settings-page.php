@@ -58,7 +58,7 @@ function bts_plexorin_settings_page() {
                         <p class="content-title">(Haber Başlığı) Plexorin ile İçerikleriniz Sosyal Medyada Otomatik Olarak Paylaşılsın!</p>
                         <p class="content-link">(Haber Linki) https://plexorin.com/tr/</p>
                         <p class="content-hashtag">(Hashtagler) #plexorin #sosyalmedyapaylasimi #sosyalmedya</p>
-                        <img class="content-url" src="<?php echo plugins_url('../img/default.webp', __FILE__); ?>" style="width: 100%">
+                        <img class="content-url" src="<?php echo esc_url(plugins_url('../img/default.webp', __FILE__)); ?>" style="width: 100%">
                     </div>
                 </div>
                 <div class="preview">
@@ -69,7 +69,7 @@ function bts_plexorin_settings_page() {
                         <p class="content-description">(Haber Açıklaması) Sosyal medya hesaplarınızı Plexorin'e üye olarak bağlayın ardından sizin için oluşturulan API anahtarını eklenti ayarlarından ekleyin. Plexorin hesabınızda seçeceğiniz hesaplarda paylaşımlar otomatik olarak yapılacaktır.</p>
                         <p class="content-link">(Haber Linki) https://plexorin.com/tr/</p>
                         <p class="content-hashtag">(Hashtagler)#plexorin #sosyalmedyapaylasimi #sosyalmedya</p>
-                        <img class="content-url" src="<?php echo plugins_url('../img/default.webp', __FILE__); ?>" style="width: 100%">
+                        <img class="content-url" src="<?php echo esc_url(plugins_url('../img/default.webp', __FILE__)); ?>" style="width: 100%">
                     </div>
                 </div>
                 <div class="preview">
@@ -80,7 +80,7 @@ function bts_plexorin_settings_page() {
                         <p class="content-description">(Haber Açıklaması) Sosyal medya hesaplarınızı Plexorin'e üye olarak bağlayın ardından sizin için oluşturulan API anahtarını eklenti ayarlarından ekleyin. Plexorin hesabınızda seçeceğiniz hesaplarda paylaşımlar otomatik olarak yapılacaktır.</p>
                         <p class="content-link">(Haber Linki) https://plexorin.com/tr/</p>
                         <p class="content-hashtag">(Hashtagler) #plexorin #sosyalmedyapaylasimi #sosyalmedya</p>
-                        <img class="content-url" src="<?php echo plugins_url('../img/default.webp', __FILE__); ?>" style="width: 100%">
+                        <img class="content-url" src="<?php echo esc_url(plugins_url('../img/default.webp', __FILE__)); ?>" style="width: 100%">
                     </div>
                 </div>
             </div>

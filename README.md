@@ -2,7 +2,7 @@
 Plexorin'e https://plexorin.com/tr/ adresinden kayıt olabilirsiniz. API anahtarı almak için contact@plexorin.com ya da +90 539 524 4156 numarası üzerinden bizimle iletişime geçebilirsiniz.
 
 # Aktif Wordpress Eklenti Linki
-![https://wordpress.org/plugins/blog-to-social-plexorin/](Blog Yazılarını Sosyal Medyada Otomatik Paylaşın - Plexorin / Wordpress Eklenti Linki)
+![Blog Yazılarını Sosyal Medyada Otomatik Paylaşın - Plexorin / Wordpress Eklenti Linki](https://wordpress.org/plugins/blog-to-social-plexorin/)
 
 # Eklenti Görselleri
 ## Eklenti Ayarları Sayfası

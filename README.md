@@ -1,6 +1,9 @@
 # Blog Yazılarını Sosyal Medyada Otomatik Paylaşın - Plexorin
 Plexorin'e https://plexorin.com/tr/ adresinden kayıt olabilirsiniz. API anahtarı almak için contact@plexorin.com ya da +90 539 524 4156 numarası üzerinden bizimle iletişime geçebilirsiniz.
 
+# Aktif Wordpress Eklenti Linki
+![https://wordpress.org/plugins/blog-to-social-plexorin/](Blog Yazılarını Sosyal Medyada Otomatik Paylaşın - Plexorin / Wordpress Eklenti Linki)
+
 # Eklenti Görselleri
 ## Eklenti Ayarları Sayfası
 ![plexorin-wordpress-plugin](https://github.com/user-attachments/assets/236f70a1-dddd-4b45-9bdd-0c244c3b9580)

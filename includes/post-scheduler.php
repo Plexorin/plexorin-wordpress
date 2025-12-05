@@ -89,7 +89,7 @@ function bts_plexorin_send_post_to_plexorin($post_ID, $post, $update) {
     );
 
     // Send the data to the specified endpoint
-    $response = wp_remote_post('https://plexorin.com/hub/operations/api-blog-content-scheduler.php', array(
+    $response = wp_remote_post('https://plexorin.com/api/v1/create-content', array(
         'method' => 'POST',
         'body' => wp_json_encode($data),
         'headers' => array(
